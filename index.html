@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Int Array Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Int Array Tracker</h1>
+
+  <form id="dataForm">
+    <label>Date: <input type="date" id="date" required></label>
+    <label>First Number: <input type="number" id="first" required></label>
+    <label>Second Number: <input type="number" id="second" required></label>
+    <label>Day Special:
+  <select id="daySpecial">
+   <!-- Options will be loaded dynamically from DB -->
+  </select>
+  
+  <button type="submit">Add</button>
+  
+  <div style="margin-top: 10px;">
+  <input type="text" id="newDaySpecial" placeholder="Add new day special..." />
+  <button type="button" onclick="addDaySpecialOption()">Add Option</button>
+  </div>
+  </form>
+<br>
+<h3>Get Family</h3>
+<input type="number" id="jodiInput" placeholder="Enter two-digit number" min="0" max="99" />
+<button onclick="handleJodiInput()">Get Family</button>
+
+<div id="jodiResult" style="margin-top: 10px; font-weight: bold;"></div>
+
+ <br>
+  <h2>All Entries</h2>
+   <label>Year: <input type="number" id="filterYear" placeholder="e.g. 2025" /></label>
+  <label>Month: <input type="number" id="filterMonth" min="1" max="12" placeholder="1-12" /></label>
+  <label>Week: <input type="number" id="filterWeek" min="1" max="53" placeholder="1-53" /></label>
+  <label>Day: <input type="number" id="filterDay" min="1" max="31" placeholder="1-31" /></label>
+  <label>Day Special:
+    <select id="filterDaySpecial">
+      <!-- Options will be loaded dynamically from DB -->
+    </select>
+  </label>
+  <label>WeekDay:
+    <select id="filterWeekDay">
+      <option value="">--All--</option>
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+    </select>
+  </label>
+  <button onclick="applyFilters()">Apply Filters</button>
+  <button onclick="resetFilters()">Reset</button>
+  <button onclick="filterData()">Search</button>
+
+  <table border="1" id="dataTable"></table>
+
+ <h3>Statistics</h3>
+<table border="1" id="statsTable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Stat Name</th>
+      <th>FirstNumber</th>
+      <th>SecondNumber</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+
+ <div class="stats-row">
+  <div id="firstStats" class="stat-box"></div>
+  <div id="secondStats" class="stat-box"></div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
